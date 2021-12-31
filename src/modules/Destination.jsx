@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Destination = () => {
@@ -26,15 +26,14 @@ const Destination = () => {
 
   const [dataDest, setDataDest] = useState({ data: [], isLoaded: false });
   const [dest, setDest] = useState(0);
-  const fetching = useCallback(() => {
-    fetch("/data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setDataDest({ data: data.destinations, isLoaded: true });
-      });
-  }, []);
-
   useEffect(() => {
+    const fetching = () => {
+      fetch("/data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          setDataDest({ data: data.crew, isLoaded: true });
+        });
+    };
     fetching();
   }, []);
   return (
@@ -151,7 +150,7 @@ const Destination = () => {
               <img
                 src={dataDest.data[dest].images.webp}
                 className="h-44 mt-9"
-                alt="Crew Member Picture"
+                alt={`Destination ${dataDest.data[dest].name}`}
               ></img>
             )}
           </div>

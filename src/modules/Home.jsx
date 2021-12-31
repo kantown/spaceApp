@@ -26,7 +26,7 @@ const Home = () => {
           className="hamburger m-8 md:hidden"
           onClick={() => hamburgerHandle()}
         >
-          <img src="/assets/shared/icon-hamburger.svg"></img>
+          <img src="/assets/shared/icon-hamburger.svg" alt="menu-open"></img>
         </button>
         <nav
           className="fixed right-0 bg-mainLight w-8/12 h-screen bg-opacity-10 backdrop-filter backdrop-blur-md transition-all translate-x-full
@@ -37,7 +37,7 @@ const Home = () => {
               className="close m-8 md:hidden"
               onClick={() => closeHandle()}
             >
-              <img src="/assets/shared/icon-close.svg"></img>
+              <img src="/assets/shared/icon-close.svg" alt="menu-close"></img>
             </button>
           </div>
           <ul
