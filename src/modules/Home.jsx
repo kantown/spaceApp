@@ -46,7 +46,7 @@ const Home = () => {
           lg:pl-24 lg:pr-36 lg:h-24 lg:before:content-none lg:before:border-t lg:before:border-mainLight lg:before:relative"
           >
             <li className="pb-5 md:active:border-b-2 mx-5 md:pb-0 md:h-full md:flex md:items-center">
-              <Link to="/home" className="flex">
+              <Link to="/" className="flex">
                 <span className="mr-4 font-bold md:hidden lg:block">00</span>
                 HOME
               </Link>
