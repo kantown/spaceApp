@@ -26,12 +26,13 @@ const Destination = () => {
 
   const [dataDest, setDataDest] = useState({ data: [], isLoaded: false });
   const [dest, setDest] = useState(0);
+
   useEffect(() => {
     const fetching = () => {
       fetch("/data.json")
         .then((response) => response.json())
         .then((data) => {
-          setDataDest({ data: data.crew, isLoaded: true });
+          setDataDest({ data: data.destinations, isLoaded: true });
         });
     };
     fetching();
