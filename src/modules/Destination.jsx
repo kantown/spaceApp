@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, StrictMode } from "react";
 import { Link } from "react-router-dom";
 
 const Destination = () => {
@@ -16,12 +16,6 @@ const Destination = () => {
 
   const changeMember = (index) => {
     setDest(index);
-    const input = document.getElementById(`radio${index}`);
-    const labels = document.querySelectorAll(`label`);
-    labels.forEach((el) => {
-      el.classList.remove("border-b-2");
-    });
-    input.parentElement.classList.add("border-b-2");
   };
 
   const [dataDest, setDataDest] = useState({ data: [], isLoaded: false });
@@ -38,7 +32,7 @@ const Destination = () => {
     fetching();
   }, []);
   return (
-    <div className="bg-dest-sm md:bg-dest-md lg:bg-dest-bg bg-cover min-h-max text-mainLight">
+    <div className="bg-dest-sm md:bg-dest-md lg:bg-dest-bg bg-cover min-h-max md:h-fit text-mainLight">
       <header className="flex justify-between lg:pt-14">
         <img
           src="/assets/shared/logo.svg"
@@ -84,7 +78,7 @@ const Destination = () => {
               </Link>
             </li>
             <li className="pb-5  md:active:border-b-2 mx-5  md:pb-0 md:h-full md:flex md:items-center">
-              <Link to="#" className="flex">
+              <Link to="/technology" className="flex">
                 <span className="mr-4 font-bold md:hidden lg:block">03</span>
                 TECHNOLOGY
               </Link>
@@ -122,7 +116,7 @@ const Destination = () => {
 
         <div className="flex  justify-center mt-8">
           {dataDest.data.map((member, index) => (
-            <label className="font-barlowCondensed font-light uppercase mx-3 tracking-widest">
+            <StrictMode>
               <input
                 className="hidden"
                 type="radio"
@@ -131,8 +125,13 @@ const Destination = () => {
                 checked={dest === index}
                 onChange={() => changeMember(index)}
               />
-              {member.name}
-            </label>
+              <label
+                className="font-barlowCondensed font-light uppercase mx-3 tracking-widest"
+                htmlFor={`radio${index}`}
+              >
+                {member.name}
+              </label>
+            </StrictMode>
           ))}
         </div>
 
