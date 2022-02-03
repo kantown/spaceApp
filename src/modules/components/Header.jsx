@@ -24,7 +24,7 @@ const Header = () => {
         <img src="/assets/shared/icon-hamburger.svg" alt="menu-open"></img>
       </button>
       <nav
-        className="fixed right-0 bg-mainLight w-8/12 h-screen bg-opacity-10 backdrop-filter backdrop-blur-md transition-all translate-x-full
+        className="fixed z-50 right-0 bg-mainLight w-8/12 h-screen bg-opacity-10 backdrop-filter backdrop-blur-md transition-all translate-x-full
         md:flex  md:relative md:h-auto md:w-auto md:translate-x-0"
       >
         <div className="flex w-full justify-end">
