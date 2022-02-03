@@ -25,9 +25,12 @@ module.exports = {
           "url('../public/assets/destination/background-destination-tablet.jpg')",
         "dest-sm":
           "url('../public/assets/destination/background-destination-mobile.jpg')",
-        "tech-bg": "url('../public/assets/technology/background-technology-desktop.jpg')",
-        "tech-md": "url('../public/assets/technology/background-technology-tablet.jpg')",
-        "tech-sm": "url('../public/assets/technology/background-technology-mobile.jpg')",
+        "tech-bg":
+          "url('../public/assets/technology/background-technology-desktop.jpg')",
+        "tech-md":
+          "url('../public/assets/technology/background-technology-tablet.jpg')",
+        "tech-sm":
+          "url('../public/assets/technology/background-technology-mobile.jpg')",
       },
       letterSpacing: {
         widest02: ".2em",
